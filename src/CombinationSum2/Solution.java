@@ -1,4 +1,4 @@
-package CombinationSum;
+package CombinationSum2;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,7 +22,7 @@ public class Solution {
 			sums.add(tmp);
 			return sums;
 		}
-		List<List<Integer>> sum1 = CSum(num,start,end,target-num[start]);
+		List<List<Integer>> sum1 = CSum(num,start+1,end,target-num[start]);
 		List<List<Integer>> sum2 = CSum(num,start+1,end,target);
 		if(sum1 != null){
 			Iterator itr = sum1.iterator();
@@ -53,7 +53,7 @@ public class Solution {
         }
         return newList;
     }
-	public static List<List<Integer>> combinationSum(int[] num, int target) {
+	public static List<List<Integer>> combinationSum2(int[] num, int target) {
 		Arrays.sort(num);  
 		int len = num.length;
 		List<List<Integer>> result =  CSum(num,0,len,target);
@@ -64,11 +64,11 @@ public class Solution {
 		
     }
 	public static void main(String[] args) {
-		int[] num = {2,3,6,7};
-		int target = 7;
+		int[] num = {10,1,2,7,6,1,5};
+		int target = 8;
 		int[] num1 = {2};
 		int target1 = 1;
-		System.out.print(combinationSum(num,target));
+		System.out.print(combinationSum2(num1,target1));
 
 	}
 
